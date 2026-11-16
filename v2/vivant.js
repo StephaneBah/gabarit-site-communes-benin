@@ -62,9 +62,12 @@ function vivant(C) {
       .filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).slice(0, 4);
     const boite = hero.parentElement;
     const calques = srcs.slice(1).map((src) => {
-      const im = new Image(); im.src = C.img + src; im.alt = ""; im.className = "diapo"; im.setAttribute("aria-hidden", "true");
+      const im = new Image(); im.dataset.src = C.img + src; im.alt = ""; im.className = "diapo"; im.setAttribute("aria-hidden", "true");
       hero.after(im); return im;
     });
+    // la photo d'accueil d'abord, les suivantes une fois qu'elle est affichée
+    const suite = () => setTimeout(() => calques.forEach((im) => (im.src = im.dataset.src)), 900);
+    hero.complete ? suite() : hero.addEventListener("load", suite, { once: true });
     hero.classList.add("diapo");
     const tous = [hero, ...calques];
     const pts = document.createElement("div"); pts.className = "points"; pts.setAttribute("aria-hidden", "true");
@@ -92,6 +95,12 @@ function vivant(C) {
     };
     document.head.appendChild(sc);
   }
+
+  // images : apparition en fondu une fois chargées (pas de « clignotement »)
+  document.querySelectorAll('img[loading="lazy"]').forEach((i) => {
+    if (i.complete && i.naturalWidth) return;
+    i.classList.add("attend"); i.addEventListener("load", () => i.classList.remove("attend"), { once: true });
+  });
 
   // 3 bis. titres : chaque mot monte de derrière un cache, comme le nom de la ville
   document.querySelectorAll(".sec h2, .chap h2, .frise h2, .recit-tete h1").forEach((h) => {

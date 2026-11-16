@@ -12,5 +12,5 @@
       sessionStorage.setItem("vu-" + c, "1");
     }
   } catch (e) {}
-  document.write(`<script src="communes/${c}.js?v=25"><\/script>`);
+  document.write(`<script src="communes/${c}.js?v=26"><\/script>`);
 })();

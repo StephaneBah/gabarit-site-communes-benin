@@ -10,7 +10,7 @@ window.COMMUNE = {
   couleurs: { argile: "#1d6b45", "argile-f": "#0e3f28", terre: "#0a1810", "terre-rgb": "10 24 16", lumiere: "#e3a72f" },
   marche: "marché Arzèkè",
   phrase: "Chef-lieu du Borgou, au carrefour des routes du Niger, du Nigeria et du Togo. Une cité royale, marchande et étudiante.",
-  hero: { img: "festival.jpg", mobile: "bioguerra-bronze.jpg", alt: "Danseurs en tenue rouge, jaune et verte pendant le Benin Roots Festival de Parakou", credit: "Danse tèkè au Benin Roots Festival. Photo Benin Roots Festival (Pinterest), droits à obtenir.", position: "50% 35%" },
+  hero: { img: "festival.webp", mobile: "bioguerra-bronze.webp", alt: "Danseurs en tenue rouge, jaune et verte pendant le Benin Roots Festival de Parakou", credit: "Danse tèkè au Benin Roots Festival. Photo Benin Roots Festival (Pinterest), droits à obtenir.", position: "50% 35%" },
   symboles: ["cauri", "case"],
   accroche: "Le palais royal, les marchés, Bio Guerra",
   chapoDecouvrir: "Du palais royal aux marchés : quatre lieux pour comprendre Parakou.",
@@ -20,32 +20,32 @@ window.COMMUNE = {
     texte: "Zémidjans au carrefour, minarets au bout de la rue, Bio Guerra à cheval sur sa place : Parakou vit au rythme des routes qui s'y croisent.",
     lien: "Parcourir Parakou en images",
     imgs: [
-      { src: "bioguerra-bronze.jpg", alt: "Statue équestre en bronze de Bio Guerra, cheval cabré sur fond de ciel bleu", legende: "Bio Guerra en bronze. Photo Etoile Salariat (Pinterest), droits à obtenir." },
-      { src: "tambours.jpg", alt: "Joueurs de tambour en chemise bleue au Benin Roots Festival", legende: "Tambours au Benin Roots Festival. Photo Benin Roots Festival (Pinterest), droits à obtenir." },
-      { src: "bioguera.jpg", alt: "Statue équestre de Bio Guerra sur son socle blanc, place Bio Guerra", legende: "Bio Guerra à cheval, sur sa place. Photo Dowomiche, CC BY-SA 4.0." },
-      { src: "obelisque.jpg", alt: "Zémidjans et voitures au carrefour de l'obélisque marqué « Parakou »", legende: "Le carrefour de l'obélisque. Photo UXrocks, CC BY 3.0." },
-      { src: "rue.jpg", alt: "Rue animée de Parakou, piétons, camion et minarets au fond", legende: "Rue du centre, minarets au fond. Photo UXrocks, CC BY 3.0." }
+      { src: "bioguerra-bronze.webp", alt: "Statue équestre en bronze de Bio Guerra, cheval cabré sur fond de ciel bleu", legende: "Bio Guerra en bronze. Photo Etoile Salariat (Pinterest), droits à obtenir." },
+      { src: "tambours.webp", alt: "Joueurs de tambour en chemise bleue au Benin Roots Festival", legende: "Tambours au Benin Roots Festival. Photo Benin Roots Festival (Pinterest), droits à obtenir." },
+      { src: "bioguera.webp", alt: "Statue équestre de Bio Guerra sur son socle blanc, place Bio Guerra", legende: "Bio Guerra à cheval, sur sa place. Photo Dowomiche, CC BY-SA 4.0." },
+      { src: "obelisque.webp", alt: "Zémidjans et voitures au carrefour de l'obélisque marqué « Parakou »", legende: "Le carrefour de l'obélisque. Photo UXrocks, CC BY 3.0." },
+      { src: "rue.webp", alt: "Rue animée de Parakou, piétons, camion et minarets au fond", legende: "Rue du centre, minarets au fond. Photo UXrocks, CC BY 3.0." }
     ]
   },
-  plein: { img: "marche2.jpg", alt: "Entrée du marché Dépôt, parasols et étals de fruits", titre: "La ville qui commerce", texte: "Dépôt, Arzèkè, Guéma, Zongo : chaque quartier a son marché. Guéma, reconstruit, a rouvert en novembre 2025 avec plus de 500 places.", credit: "Marché Dépôt. Photo Aimeabibis, Wikimedia Commons, CC BY-SA 4.0." },
+  plein: { img: "marche2.webp", alt: "Entrée du marché Dépôt, parasols et étals de fruits", titre: "La ville qui commerce", texte: "Dépôt, Arzèkè, Guéma, Zongo : chaque quartier a son marché. Guéma, reconstruit, a rouvert en novembre 2025 avec plus de 500 places.", credit: "Marché Dépôt. Photo Aimeabibis, Wikimedia Commons, CC BY-SA 4.0." },
 
   decouvrir: [
     { titre: "Le palais royal", lieu: "palais",
       texte: "Siège de la royauté baatonu de Parakou, le palais garde ses murs blancs et ses bas-reliefs. On y vient saluer le roi lors des grandes fêtes.",
-      grande: { src: "palais.jpg", alt: "Le palais royal de Parakou et ses bas-reliefs, vue de la cour", credit: "Aboudouraman, CC BY-SA 4.0" },
-      petite: { src: "palais-mur.jpg", alt: "Portrait peint sur un mur du palais royal", credit: "Aboudouraman, CC BY-SA 4.0" } },
+      grande: { src: "palais.webp", alt: "Le palais royal de Parakou et ses bas-reliefs, vue de la cour", credit: "Aboudouraman, CC BY-SA 4.0" },
+      petite: { src: "palais-mur.webp", alt: "Portrait peint sur un mur du palais royal", credit: "Aboudouraman, CC BY-SA 4.0" } },
     { titre: "Les marchés", lieu: "marche",
       texte: "Arzèkè au centre, Zongo près de la mosquée, Dépôt près de l'ancienne gare : les produits du Nord y croisent ceux du Nigeria et de Cotonou.",
-      grande: { src: "ville.jpg", alt: "Rue animée du centre de Parakou", credit: "UXrocks, CC BY 3.0" },
-      petite: { src: "zongo.jpg", alt: "Panneau « marché » et minaret dans le quartier Zongo", credit: "Aboudouraman, CC BY-SA 4.0", portrait: true } },
+      grande: { src: "ville.webp", alt: "Rue animée du centre de Parakou", credit: "UXrocks, CC BY 3.0" },
+      petite: { src: "zongo.webp", alt: "Panneau « marché » et minaret dans le quartier Zongo", credit: "Aboudouraman, CC BY-SA 4.0", portrait: true } },
     { titre: "La place Bio Guerra", lieu: "bioguerra",
       texte: "Bio Guerra mena en 1916 la résistance des Baatonu contre l'administration coloniale. La place qui porte son nom marque l'entrée de la ville.",
-      grande: { src: "bioguerra-bronze.jpg", alt: "Statue équestre en bronze de Bio Guerra", credit: "Etoile Salariat (Pinterest), droits à obtenir" },
-      petite: { src: "colombe.jpg", alt: "Monument de la Colombe", credit: "Dowomiche, CC BY-SA 4.0" } },
+      grande: { src: "bioguerra-bronze.webp", alt: "Statue équestre en bronze de Bio Guerra", credit: "Etoile Salariat (Pinterest), droits à obtenir" },
+      petite: { src: "colombe.webp", alt: "Monument de la Colombe", credit: "Dowomiche, CC BY-SA 4.0" } },
     { titre: "La mosquée centrale", lieu: null,
       texte: "Ses minarets blancs dominent le centre. À Parakou, la prière du vendredi rythme la semaine autant que les jours de marché.",
-      grande: { src: "mosquee.jpg", alt: "Minarets de la mosquée de Parakou", credit: "UXrocks, CC BY 3.0" },
-      petite: { src: "kobourou.jpg", alt: "Palais royal de Kobourou", credit: "Africasounvi, CC BY-SA 4.0" } }
+      grande: { src: "mosquee.webp", alt: "Minarets de la mosquée de Parakou", credit: "UXrocks, CC BY 3.0" },
+      petite: { src: "kobourou.webp", alt: "Palais royal de Kobourou", credit: "Africasounvi, CC BY-SA 4.0" } }
   ],
 
   carte: { centre: [9.3357, 2.6295], zoom: 14 },

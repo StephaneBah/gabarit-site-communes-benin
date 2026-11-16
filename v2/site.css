@@ -489,3 +489,7 @@ body.avec-maquette .top:not(.fixe){top:calc(1.3em + 12px)}
 body.dem .maquette{background:#151210;color:#f4e9dc}
 .hero>img,.chap .g img,.trio img{backface-visibility:hidden}
 .hero{will-change:scale}
+/* images : fondu à l'arrivée, fond de la couleur de la commune en attendant */
+.trio img,.chap img,.plein img,.archives img{transition:opacity .7s ease}
+img.attend{opacity:0}
+.chap .g,.chap .p{background:var(--argile-f)}
