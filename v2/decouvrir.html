@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Découvrir</title>
+<meta name="description" content="La commune en images : ses lieux, son histoire.">
+<meta name="theme-color" content="#1e0f09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%238f3f22'/%3E%3Ctext x='50' y='74' font-size='70' text-anchor='middle' fill='%23f4e9dc' font-family='Impact'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="site.css?v=25">
+<script src="charge.js?v=25"></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <a class="brand" href="index.html"><span class="blason" role="img" aria-label="Blason de la commune"></span><span><b id="nomC"></b><small>Mairie</small></span></a>
+  <nav aria-label="Navigation principale"><a href="demarches.html">Démarches</a><a href="decouvrir.html" aria-current="page">Découvrir</a><a href="index.html#mairie">La mairie</a></nav>
+</header>
+
+<main id="contenu">
+  <header class="recit-tete">
+    <h1>Découvrir</h1>
+    <p id="chapo"></p>
+  </header>
+  <div id="recit"></div>
+
+  <section class="sec" id="plan" aria-labelledby="tplan">
+    <h2 id="tplan">Sur la carte</h2>
+    <p class="chapo">Les lieux du récit, et la mairie pour vos démarches.</p>
+    <div class="carte" id="carte"></div>
+  </section>
+</main>
+
+<footer class="pied">
+  <span class="blason" role="img" aria-label="Blason" style="width:72px"></span>
+  <div><p class="devise" id="devise"></p><p id="lieuC"></p></div>
+  <p class="credits">Photos libres de Wikimedia Commons, crédits sous chaque image. Carte © OpenStreetMap. Maquette de démonstration.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="commun.js?v=25"></script>
+<script src="vivant.js?v=25"></script>
+<script src="symboles.js?v=25"></script>
+<script>
+const C = COMMUNE, $ = (s) => document.querySelector(s);
+document.title = `Découvrir ${C.nom}`;
+$("#nomC").textContent = C.nom;
+$("#chapo").textContent = C.chapoDecouvrir;
+$("#devise").textContent = C.devise;
+$("#lieuC").textContent = `Commune ${DE}${C.nom}, département ${/^[AEIOUÉÈ]/i.test(C.departement) ? "de l'" : "du "}${C.departement}, République du Bénin.`;
+
+const archive = (m) => m.archive || m.src.startsWith("1930");
+$("#recit").innerHTML = C.decouvrir.map((c, i) => `
+  <article class="chap${i % 2 ? " inv" : ""}" aria-labelledby="c${i}">
+    <figure class="g"><img src="${C.img + c.grande.src}" alt="${c.grande.alt}" loading="${i ? "lazy" : "eager"}"><figcaption class="cr">${c.grande.credit}</figcaption></figure>
+    <figure class="p${c.petite.portrait ? " portrait" : ""}${archive(c.petite) ? " archive" : ""}"><img src="${C.img + c.petite.src}" alt="${c.petite.alt}" loading="lazy"></figure>
+    <div class="t">
+      <span class="n" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+      <h2 id="c${i}">${c.titre}</h2>
+      <p>${c.texte}</p>
+      ${c.lieu ? `<button class="voir" data-lieu="${c.lieu}">Voir sur la carte</button>` : ""}
+      <p class="cr">Image superposée : ${c.petite.credit}</p>
+    </div>
+  </article>`).join("");
+
+carte($("#carte"));
+$("#recit").addEventListener("click", (e) => {
+  const b = e.target.closest(".voir"); if (!b) return;
+  $("#plan").scrollIntoView({ behavior: reduit() ? "auto" : "smooth" });
+  setTimeout(() => choisirLieu(b.dataset.lieu), reduit() ? 0 : 500);
+});
+document.body.insertAdjacentHTML("beforeend", TABS(2));
+</script>
+</body>
+</html>

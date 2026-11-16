@@ -1,0 +1,632 @@
+{
+ "ouidah": {
+  "porte": {
+   "titre": "Porte du non-retour au Benin.jpg",
+   "auteur": "Borisghost",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Porte_du_non-retour_au_Benin.jpg"
+  },
+  "porte2": {
+   "titre": "Nouvelle Porte du Non-Retour de Ouidah - Vue perspective.jpg",
+   "auteur": "MIA20102",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Nouvelle_Porte_du_Non-Retour_de_Ouidah_-_Vue_perspective.jpg"
+  },
+  "porte3": {
+   "titre": "La porte du non retour à ouidah.jpg",
+   "auteur": "Antoine MIASSI",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:La_porte_du_non_retour_%C3%A0_ouidah.jpg"
+  },
+  "route": {
+   "titre": "Route des esclaves à Ouidah.jpg",
+   "auteur": "Gbehlon",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Route_des_esclaves_%C3%A0_Ouidah.jpg"
+  },
+  "amazone": {
+   "titre": "Sculpture of Amazon Female Warrior - Slave Route - Ouidah - Benin.jpg",
+   "auteur": "Adam Jones, Ph.D.",
+   "licence": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sculpture_of_Amazon_Female_Warrior_-_Slave_Route_-_Ouidah_-_Benin.jpg"
+  },
+  "monument": {
+   "titre": "Monument fosse commune de la route des esclaves. Ouidah.jpg",
+   "auteur": "Eric Emeraux",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Monument_fosse_commune_de_la_route_des_esclaves._Ouidah.jpg"
+  },
+  "pythons": {
+   "titre": "Entrée du Temple des Pythons (Ouidah).jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Entr%C3%A9e_du_Temple_des_Pythons_(Ouidah).jpg"
+  },
+  "fresque": {
+   "titre": "Ouidah-Temple des Pythons-Fresque (2).jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Ouidah-Temple_des_Pythons-Fresque_(2).jpg"
+  },
+  "basilique": {
+   "titre": "Basilique de Ouidah en face du temple de Python.jpg",
+   "auteur": "Yelouassi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Basilique_de_Ouidah_en_face_du_temple_de_Python.jpg"
+  },
+  "basilique-int": {
+   "titre": "Vue interne de la Basilique de l'Immaculée-Conception de Ouidah 04.jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_interne_de_la_Basilique_de_l%27Immacul%C3%A9e-Conception_de_Ouidah_04.jpg"
+  },
+  "fort": {
+   "titre": "Fort Portugais Ouidah Benin.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Fort_Portugais_Ouidah_Benin.jpg"
+  },
+  "fort-1900": {
+   "titre": "The French fort at Ouidah, Dahomey (now Benin) early 1900s.jpg",
+   "auteur": "Unknown authorUnknown author",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_French_fort_at_Ouidah,_Dahomey_(now_Benin)_early_1900s.jpg"
+  },
+  "kpasse": {
+   "titre": "Sacred Forest Ouidah Benin Jan 2018.jpg",
+   "auteur": "Kulttuurinavigaattori",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sacred_Forest_Ouidah_Benin_Jan_2018.jpg"
+  },
+  "vodun": {
+   "titre": "Manifestation du vodoun Atchinan à la forêt Sacrée de Kpassè 15.jpg",
+   "auteur": "Maelan123",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Manifestation_du_vodoun_Atchinan_%C3%A0_la_for%C3%AAt_Sacr%C3%A9e_de_Kpass%C3%A8_15.jpg"
+  },
+  "vodun2": {
+   "titre": "Manifestation du vodoun Atchinan à la forêt Sacrée de Kpassè 01.jpg",
+   "auteur": "Maelan123",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Manifestation_du_vodoun_Atchinan_%C3%A0_la_for%C3%AAt_Sacr%C3%A9e_de_Kpass%C3%A8_01.jpg"
+  },
+  "vodun3": {
+   "titre": "Manifestation du vodoun Atchinan à la forêt Sacrée de Kpassè 24.jpg",
+   "auteur": "Maelan123",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Manifestation_du_vodoun_Atchinan_%C3%A0_la_for%C3%AAt_Sacr%C3%A9e_de_Kpass%C3%A8_24.jpg"
+  },
+  "plage": {
+   "titre": "Plage de Ouidah (Benin, 2013).jpg",
+   "auteur": "jbdodane",
+   "licence": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Plage_de_Ouidah_(Benin,_2013).jpg"
+  },
+  "cite": {
+   "titre": "The city of Ouidah.jpg",
+   "auteur": "DEGAN Gabin",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_city_of_Ouidah.jpg"
+  },
+  "plage-soir": {
+   "titre": "Tourist standing on the beach in the incoming wave",
+   "auteur": "Niyi David",
+   "licence": "Licence Pexels (usage libre, attribution non requise)",
+   "source": "https://www.pexels.com/photo/20231862/"
+  }
+ },
+ "porto-novo": {
+  "mosquee": {
+   "titre": "Façade Grande Mosquée de Porto-Novo.jpg",
+   "auteur": "Gildaskiki",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Fa%C3%A7ade_Grande_Mosqu%C3%A9e_de_Porto-Novo.jpg"
+  },
+  "mosquee2": {
+   "titre": "Grande Mosquee Porto-Novo Benin Joseph Herve Ahissou.jpg",
+   "auteur": "GBETONGNINOUGBO JOSEPH HERVE AHISSOU",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Grande_Mosquee_Porto-Novo_Benin_Joseph_Herve_Ahissou.jpg"
+  },
+  "porte": {
+   "titre": "Vue d'une entrée de la Grande mosquée de Porto-Novo au Bénin.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_d%27une_entr%C3%A9e_de_la_Grande_mosqu%C3%A9e_de_Porto-Novo_au_B%C3%A9nin.jpg"
+  },
+  "honme": {
+   "titre": "Front yard Musee Honme Porto Novo Benin Dec 2017.jpg",
+   "auteur": "Kulttuurinavigaattori",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Front_yard_Musee_Honme_Porto_Novo_Benin_Dec_2017.jpg"
+  },
+  "honme-statue": {
+   "titre": "Musée Honmè-Eté 1999 (3).jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_Honm%C3%A8-Et%C3%A9_1999_(3).jpg"
+  },
+  "honme-cour": {
+   "titre": "La cour du Musée Honmè à Porto Novo.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:La_cour_du_Mus%C3%A9e_Honm%C3%A8_%C3%A0_Porto_Novo.jpg"
+  },
+  "dasilva": {
+   "titre": "Musée da Silva.jpg",
+   "auteur": "Ksperentos",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_da_Silva.jpg"
+  },
+  "bas-relief": {
+   "titre": "Une affiche de l'esclavage au Musée Da Sylva de Porto Novo.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Une_affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg"
+  },
+  "bas-relief2": {
+   "titre": "Affiche de l'esclavage au Musée Da Sylva de Porto Novo.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Affiche_de_l%27esclavage_au_Mus%C3%A9e_Da_Sylva_de_Porto_Novo.jpg"
+  },
+  "jardin": {
+   "titre": "Arbre centenaire dans le jardin des plantes et de la nature de Porto-Novo au Bénin.jpg",
+   "auteur": "Padonou Dotou",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Arbre_centenaire_dans_le_jardin_des_plantes_et_de_la_nature_de_Porto-Novo_au_B%C3%A9nin.jpg"
+  },
+  "singes": {
+   "titre": "Mâle et femelle des singes a ventre blanc au Jardin de plantes de Porto-Novo au Benin (Cercopithecus mona).jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:M%C3%A2le_et_femelle_des_singes_a_ventre_blanc_au_Jardin_de_plantes_de_Porto-Novo_au_Benin_(Cercopithecus_mona).jpg"
+  },
+  "rue": {
+   "titre": "Vue de la Grande Mosquée de Porto-Novo.jpg",
+   "auteur": "Salamath Ogountola",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_de_la_Grande_Mosqu%C3%A9e_de_Porto-Novo.jpg"
+  },
+  "nouvelle-mosquee": {
+   "titre": "Vue de loin de la Nouvelle Grande Mosquée de Porto-Novo au Bénin.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_de_loin_de_la_Nouvelle_Grande_Mosqu%C3%A9e_de_Porto-Novo_au_B%C3%A9nin.jpg"
+  }
+ },
+ "cotonou": {
+  "dantokpa": {
+   "titre": "Vue panoramique marché Dantokpa au Bénin.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_panoramique_march%C3%A9_Dantokpa_au_B%C3%A9nin.jpg"
+  },
+  "dantokpa2": {
+   "titre": "Marché Dantokpa 1.jpg",
+   "auteur": "Alacoolwiki",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:March%C3%A9_Dantokpa_1.jpg"
+  },
+  "poteries": {
+   "titre": "Marché Dantokpa 14.jpg",
+   "auteur": "Alacoolwiki",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:March%C3%A9_Dantokpa_14.jpg"
+  },
+  "zem": {
+   "titre": "Zemidjan de Cotonou.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Zemidjan_de_Cotonou.jpg"
+  },
+  "zem2": {
+   "titre": "Le transportː Cotonou au Bénin 01.jpg",
+   "auteur": "Rachad sanoussi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Le_transport%CB%90_Cotonou_au_B%C3%A9nin_01.jpg"
+  },
+  "cathedrale": {
+   "titre": "Cathédrale Notre-Dame-de-misericordes à Cotonou.jpg",
+   "auteur": "Saliousoft",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre-Dame-de-misericordes_%C3%A0_Cotonou.jpg"
+  },
+  "cathedrale2": {
+   "titre": "Cotonoucathedral.jpg",
+   "auteur": "MVN",
+   "licence": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cotonoucathedral.jpg"
+  },
+  "lagune": {
+   "titre": "Embouchure lagune Cotonou 3.jpg",
+   "auteur": "Alacoolwiki",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Embouchure_lagune_Cotonou_3.jpg"
+  },
+  "pirogue": {
+   "titre": "Pirogue déchargeant marchandises pour marché dantokpa à Cotonou Bénin.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Pirogue_d%C3%A9chargeant_marchandises_pour_march%C3%A9_dantokpa_%C3%A0_Cotonou_B%C3%A9nin.jpg"
+  },
+  "plage": {
+   "titre": "Plage de Cotonou 1.jpg",
+   "auteur": "Alacoolwiki",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Plage_de_Cotonou_1.jpg"
+  },
+  "enfants": {
+   "titre": "Des enfants à la plage Cotonou (Bénin).jpg",
+   "auteur": "Antoine MIASSI",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Des_enfants_%C3%A0_la_plage_Cotonou_(B%C3%A9nin).jpg"
+  },
+  "etoile": {
+   "titre": "Statut sur la place de l'etoile rouge de cotonou.jpg",
+   "auteur": "houaito affo daniel",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Statut_sur_la_place_de_l%27etoile_rouge_de_cotonou.jpg"
+  },
+  "passerelle": {
+   "titre": "VENDEUSE DE CONDIMENTS SUR LA PASSERELLE MARCHE DANTOKPA-COTONOU BENIN.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:VENDEUSE_DE_CONDIMENTS_SUR_LA_PASSERELLE_MARCHE_DANTOKPA-COTONOU_BENIN.jpg"
+  },
+  "panorama": {
+   "titre": "Vue panoramique quartier cadjéhoun-Cotonou au Bénin 1.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_panoramique_quartier_cadj%C3%A9houn-Cotonou_au_B%C3%A9nin_1.jpg"
+  },
+  "rue": {
+   "titre": "Motorbike ride through Cotonou street scene",
+   "auteur": "Vurzie Kim",
+   "licence": "Licence Pexels (usage libre, attribution non requise)",
+   "source": "https://www.pexels.com/photo/38166003/"
+  },
+  "pagnes": {
+   "titre": "Young woman standing next to piles of colorful patterned fabric",
+   "auteur": "Iwaria",
+   "licence": "Licence Pexels (usage libre, attribution non requise)",
+   "source": "https://www.pexels.com/photo/8655018/"
+  },
+  "amazone-site": {
+   "titre": "Site Amazone.jpg",
+   "auteur": "Fahissou",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Site_Amazone.jpg"
+  },
+  "amazone-nuit": {
+   "titre": "L'Amazone statue.jpg",
+   "auteur": "MathieuC26",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:L'Amazone_statue.jpg"
+  },
+  "amazone-ciel": {
+   "titre": "Le monument de l'Amazone.jpg",
+   "auteur": "Mister Kolson",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Le_monument_de_l'Amazone.jpg"
+  },
+  "amazone-aube": {
+   "titre": "Lever de soleil sur l'Esplanade de l'amazone à Cotonou.jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Lever_de_soleil_sur_l'Esplanade_de_l'amazone_à_Cotonou.jpg"
+  },
+  "presidence": {
+   "titre": "Palais de la Marina ou Présidence de la République du Bénin 01.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Palais_de_la_Marina_ou_Présidence_de_la_République_du_Bénin_01.jpg"
+  },
+  "presidence2": {
+   "titre": "Présidence du Bénin.jpg",
+   "auteur": "Charbel1719",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Présidence_du_Bénin.jpg"
+  },
+  "haievive": {
+   "titre": "Quartier haie vive Cotonou la nuit 09.jpg",
+   "auteur": "Tohinde",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Quartier_haie_vive_Cotonou_la_nuit_09.jpg"
+  },
+  "sofitel": {
+   "titre": "Sofitel Cotonou Marina Hôtel & Spa.jpg",
+   "auteur": "Freed Armel",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sofitel_Cotonou_Marina_Hôtel_&_Spa.jpg"
+  },
+  "fidjrosse-jeunes": {
+   "titre": "Jeunes sur la plage de Fidjrossè à Cotonou au Bénin.jpg",
+   "auteur": "Saliousoft",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Jeunes_sur_la_plage_de_Fidjrossè_à_Cotonou_au_Bénin.jpg"
+  },
+  "fidjrosse": {
+   "titre": "La plage Fidjrossè à Cotonou au Bénin.jpg",
+   "auteur": "MyLady333",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:La_plage_Fidjrossè_à_Cotonou_au_Bénin.jpg"
+  },
+  "pneus": {
+   "titre": "Tires recycled and transformed into seats arranged at the beach.jpg",
+   "auteur": "Adoscam",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tires_recycled_and_transformed_into_seats_arranged_at_the_beach.jpg"
+  },
+  "amazone-allee": {
+   "titre": "Tour cycliste du Bénin 2026 164.jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tour_cycliste_du_Bénin_2026_164.jpg"
+  },
+  "amazone-jardins": {
+   "titre": "Tour cycliste du Bénin 2026 181.jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tour_cycliste_du_Bénin_2026_181.jpg"
+  },
+  "amazone-tour": {
+   "titre": "Tour cycliste du Bénin 2026 106.jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tour_cycliste_du_Bénin_2026_106.jpg"
+  }
+ },
+ "parakou": {
+  "palais": {
+   "titre": "Le Palais Royal de Parakou et ses bas reliefs vue de loin.jpg",
+   "auteur": "Aboudouraman",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Le_Palais_Royal_de_Parakou_et_ses_bas_reliefs_vue_de_loin.jpg"
+  },
+  "palais-mur": {
+   "titre": "Image sur le mur du Palais Royal de Parakou.jpg",
+   "auteur": "Aboudouraman",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Image_sur_le_mur_du_Palais_Royal_de_Parakou.jpg"
+  },
+  "marche": {
+   "titre": "Marché Guema Parakou.jpg",
+   "auteur": "Africasounvi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:March%C3%A9_Guema_Parakou.jpg"
+  },
+  "marche2": {
+   "titre": "Marché Dépôt de Parakou.jpg",
+   "auteur": "Aimeabibis",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:March%C3%A9_D%C3%A9p%C3%B4t_de_Parakou.jpg"
+  },
+  "mosquee": {
+   "titre": "ParakouMosque2.jpg",
+   "auteur": "UXrocks",
+   "licence": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:ParakouMosque2.jpg"
+  },
+  "bioguerra": {
+   "titre": "Place Bio Guerra 1 - Parakou.jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Place_Bio_Guerra_1_-_Parakou.jpg"
+  },
+  "colombe": {
+   "titre": "La colombe 06.jpg",
+   "auteur": "Dowomiche",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:La_colombe_06.jpg"
+  },
+  "kobourou": {
+   "titre": "Palais Royal de Kobourou à Parakou.jpg",
+   "auteur": "Africasounvi",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Palais_Royal_de_Kobourou_%C3%A0_Parakou.jpg"
+  },
+  "ville": {
+   "titre": "Parakou2.jpg",
+   "auteur": "UXrocks",
+   "licence": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Parakou2.jpg"
+  },
+  "zongo": {
+   "titre": "Marché Zongo et Mosquée Zongo de Parakou.jpg",
+   "auteur": "Aboudouraman",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:March%C3%A9_Zongo_et_Mosqu%C3%A9e_Zongo_de_Parakou.jpg"
+  },
+  "bioguera": {
+   "titre": "Place Bio Guera de Parakou 05.jpg",
+   "auteur": "Dowomiche",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Place_Bio_Guera_de_Parakou_05.jpg"
+  },
+  "obelisque": {
+   "titre": "Parakou2.jpg",
+   "auteur": "UXrocks",
+   "licence": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Parakou2.jpg"
+  },
+  "rue": {
+   "titre": "Parakou1.jpg",
+   "auteur": "UXrocks",
+   "licence": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Parakou1.jpg"
+  }
+ },
+ "natitingou": {
+  "ville": {
+   "titre": "Benin Natitingou.JPG",
+   "auteur": "Baliola",
+   "licence": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Benin_Natitingou.JPG"
+  },
+  "tata": {
+   "titre": "Tata-somba-Dorf2.jpg",
+   "auteur": "Dominik Schwarz",
+   "licence": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tata-somba-Dorf2.jpg"
+  },
+  "tata2": {
+   "titre": "Tata somba, la maison traditionnelle à étage.jpg",
+   "auteur": "Justin ABADJAYE",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tata_somba,_la_maison_traditionnelle_%C3%A0_%C3%A9tage.jpg"
+  },
+  "tata3": {
+   "titre": "Tata Somba de Nadoba.jpg",
+   "auteur": "Step may",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tata_Somba_de_Nadoba.jpg"
+  },
+  "kaba-musee": {
+   "titre": "Vue de face du Musée KABA de Natitingou 01.jpg",
+   "auteur": "Barke11",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_de_face_du_Mus%C3%A9e_KABA_de_Natitingou_01.jpg"
+  },
+  "kaba": {
+   "titre": "Vue de face de la statue de KABA de Natitingou 01.jpg",
+   "auteur": "Barke11",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_de_face_de_la_statue_de_KABA_de_Natitingou_01.jpg"
+  },
+  "kota": {
+   "titre": "Chutes de Kota (1).jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Chutes_de_Kota_(1).jpg"
+  },
+  "passerelle": {
+   "titre": "Chutes de Kota-Passerelle.jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Chutes_de_Kota-Passerelle.jpg"
+  },
+  "tanougou": {
+   "titre": "Chutes de Tanougou (3).jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Chutes_de_Tanougou_(3).jpg"
+  },
+  "saut": {
+   "titre": "Jeune homme sautant des cascades de Tanougou (Bénin).jpg",
+   "auteur": "Fawaz.tairou",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Jeune_homme_sautant_des_cascades_de_Tanougou_(B%C3%A9nin).jpg"
+  },
+  "atacora": {
+   "titre": "Vue panoramique de la chaîne de Atacora.jpg",
+   "auteur": "Abdoul-Azize BOUKARY",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vue_panoramique_de_la_cha%C3%AEne_de_Atacora.jpg"
+  },
+  "charbon": {
+   "titre": "Atacora-Vente de charbon de bois (1).jpg",
+   "auteur": "Ji-Elle",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Atacora-Vente_de_charbon_de_bois_(1).jpg"
+  },
+  "soleil": {
+   "titre": "Paysage de la première destination touristique au couché du soleil.jpg",
+   "auteur": "AMADOU BAHLEMAN FARID",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Paysage_de_la_premi%C3%A8re_destination_touristique_au_couch%C3%A9_du_soleil.jpg"
+  },
+  "pendjari": {
+   "titre": "Pendjari kuhantilopen.JPG",
+   "auteur": "Gregor Rom",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Pendjari_kuhantilopen.JPG"
+  },
+  "pendjari2": {
+   "titre": "Pendjari.JPG",
+   "auteur": "Martin Wegmann",
+   "licence": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Pendjari.JPG"
+  }
+ },
+ "nikki": {
+  "cavaliers": {
+   "titre": "Cavaliers bariba Gaani 2026 01.jpg",
+   "auteur": "Mhope2010",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cavaliers_bariba_Gaani_2026_01.jpg"
+  },
+  "cavaliers2": {
+   "titre": "Cavaliers bariba Gaani 2026 07.jpg",
+   "auteur": "Mhope2010",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cavaliers_bariba_Gaani_2026_07.jpg"
+  },
+  "cavalier": {
+   "titre": "Cavaliers bariba Gaani 2026 03.jpg",
+   "auteur": "Mhope2010",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cavaliers_bariba_Gaani_2026_03.jpg"
+  },
+  "musee": {
+   "titre": "Bâtiment du musée royal Danri de Nikki, département du Borgou, Bénin 01.jpg",
+   "auteur": "Saliousoft",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:B%C3%A2timent_du_mus%C3%A9e_royal_Danri_de_Nikki,_d%C3%A9partement_du_Borgou,_B%C3%A9nin_01.jpg"
+  },
+  "griot": {
+   "titre": "Un griot du palais de Nikki.jpg",
+   "auteur": "Mohamed agnide",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Un_griot_du_palais_de_Nikki.jpg"
+  },
+  "arene": {
+   "titre": "Cavalière dans l'arène impériale de Nikki Gaani 2026 01.jpg",
+   "auteur": "Mhope2010",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cavali%C3%A8re_dans_l%27ar%C3%A8ne_imp%C3%A9riale_de_Nikki_Gaani_2026_01.jpg"
+  },
+  "entree": {
+   "titre": "L'entrée principale des cavaliers Wassangari lors des cérémonie équestre de la Gaani.jpg",
+   "auteur": "Step may",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:L%27entr%C3%A9e_principale_des_cavaliers_Wassangari_lors_des_c%C3%A9r%C3%A9monie_%C3%A9questre_de_la_Gaani.jpg"
+  },
+  "salut": {
+   "titre": "Salutations de fidèles lors de la Gaani 2026 à Nikki 04.jpg",
+   "auteur": "MIA20102",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Salutations_de_fid%C3%A8les_lors_de_la_Gaani_2026_%C3%A0_Nikki_04.jpg"
+  },
+  "salut2": {
+   "titre": "Salutations de fidèles lors de la Gaani 2026 à Nikki 09.jpg",
+   "auteur": "MIA20102",
+   "licence": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Salutations_de_fid%C3%A8les_lors_de_la_Gaani_2026_%C3%A0_Nikki_09.jpg"
+  },
+  "mosquee": {
+   "titre": "Mosquée du Musée royal de Nikki (Vue de loin) 01.jpg",
+   "auteur": "Mohamed agnide",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Mosqu%C3%A9e_du_Mus%C3%A9e_royal_de_Nikki_(Vue_de_loin)_01.jpg"
+  },
+  "case": {
+   "titre": "Musée palais royal de Danri à Nikki au Bénin 08.jpg",
+   "auteur": "Saliousoft",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_palais_royal_de_Danri_%C3%A0_Nikki_au_B%C3%A9nin_08.jpg"
+  },
+  "gani": {
+   "titre": "DEGAN Gabin ( gani's party ).jpg",
+   "auteur": "DEGAN Gabin",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:DEGAN_Gabin_(_gani%27s_party_).jpg"
+  },
+  "place": {
+   "titre": "Place de la fête Gaani.jpg",
+   "auteur": "Mohamed agnide",
+   "licence": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Place_de_la_f%C3%AAte_Gaani.jpg"
+  }
+ }
+}
