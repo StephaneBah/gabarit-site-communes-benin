@@ -36,7 +36,8 @@
     // signature de la marque-pays (texte seul : le logo officiel demande l'accord de l'émetteur)
     if (pied) pied.insertAdjacentHTML("beforeend", `<p class="pays"><i aria-hidden="true"></i>République du Bénin · <b>Un monde de splendeurs</b></p>`);
     // maquette de concours : on le dit clairement, en haut de chaque page
-    document.body.insertAdjacentHTML("afterbegin", `<p class="maquette">Maquette de concours, site non officiel : ce n'est pas le site de la mairie ${C.nom.match(/^[AEIOUÉ]/i) ? "d'" : "de "}${C.nom}.</p>`);
+    const bandeau = document.querySelector(".maquette");
+    if (bandeau) bandeau.textContent = `Maquette de concours, site non officiel : ce n'est pas le site de la mairie ${C.nom.match(/^[AEIOUÉ]/i) ? "d'" : "de "}${C.nom}.`;
     document.body.classList.add("avec-maquette");
     vivant(C);
   });

@@ -11,10 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="site.css?v=27">
-<script src="charge.js?v=27"></script>
+<link rel="stylesheet" href="site.css?v=29">
+<script src="charge.js?v=29"></script>
 </head>
-<body>
+<body class="avec-maquette">
+<p class="maquette">Maquette de concours, site non officiel : ce n'est pas le site de la mairie.</p>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
 <header class="top">
@@ -69,9 +70,9 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="commun.js?v=27"></script>
-<script src="vivant.js?v=27"></script>
-<script src="symboles.js?v=27"></script>
+<script src="commun.js?v=29"></script>
+<script src="vivant.js?v=29"></script>
+<script src="symboles.js?v=29"></script>
 <script>
 const C = COMMUNE, $ = (s) => document.querySelector(s), ARG = getComputedStyle(document.documentElement).getPropertyValue("--argile").trim();
 const a = /^[AEIOUÉÈ]/i.test(C.nom) ? "à " : "à ";
@@ -104,20 +105,23 @@ if (!V.archive) {
     .filter((v, i, a) => a.findIndex((w) => w.src === v.src) === i).slice(0, 12);
   // vitrine en trios, mise en page d'Abomey : avance seule, flèches discrètes, jamais pilotée par le défilement
   const trios = []; for (let i = 0; i + 3 <= vues.length; i += 3) trios.push(vues.slice(i, i + 3));
-  const fig = (v, i) => `<figure class="a${i + 1}"><div class="cadre"><img decoding="async" src="${C.img + v.src}" alt="${v.alt}" loading="lazy"></div><figcaption>${v.leg}</figcaption></figure>`;
+  // seul le premier groupe charge ses photos ; les suivants juste avant d'apparaître
+  const fig = (v, i, k) => `<figure class="a${i + 1}"><div class="cadre"><img decoding="async" ${k ? "data-src" : "src"}="${C.img + v.src}" alt="${v.alt}" loading="lazy"></div><figcaption>${v.leg}</figcaption></figure>`;
   const ico = (d) => `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="${d}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   $("#vitrine").outerHTML = `<div class="carrousel" id="vitrine" role="region" aria-roledescription="carrousel" aria-label="Images de ${C.nom}">
-    <div class="vues">${trios.map((t, k) => `<div class="trio${k ? "" : " on"}" role="group" aria-label="${k + 1} sur ${trios.length}"${k ? ' aria-hidden="true"' : ""}>${t.map(fig).join("")}</div>`).join("")}</div>
+    <div class="vues">${trios.map((t, k) => `<div class="trio${k ? "" : " on"}" role="group" aria-label="${k + 1} sur ${trios.length}"${k ? ' aria-hidden="true"' : ""}>${t.map((v, i) => fig(v, i, k)).join("")}</div>`).join("")}</div>
     <div class="fleches"><span class="compte"><b>01</b> / ${String(trios.length).padStart(2, "0")}</span>
       <button type="button" class="prec" aria-label="Images précédentes">${ico("M15 5l-7 7 7 7")}</button>
       <button type="button" class="suiv" aria-label="Images suivantes">${ico("M9 5l7 7-7 7")}</button></div></div>`;
   const car = $("#vitrine"), ts = [...car.querySelectorAll(".trio")];
   let k = 0, minuteur;
-  const montre = (n) => { k = (n + ts.length) % ts.length; ts.forEach((t, j) => { t.classList.toggle("on", j === k); t.toggleAttribute("aria-hidden", j !== k); });
+  const charge = (j) => ts[(j + ts.length) % ts.length].querySelectorAll("img[data-src]").forEach((im) => { im.src = im.dataset.src; im.removeAttribute("data-src"); });
+  const montre = (n) => { k = (n + ts.length) % ts.length; charge(k); charge(k + 1); ts.forEach((t, j) => { t.classList.toggle("on", j === k); t.toggleAttribute("aria-hidden", j !== k); });
     car.querySelector(".compte b").textContent = String(k + 1).padStart(2, "0"); };
   const lance = () => { clearInterval(minuteur); if (ts.length > 1) minuteur = setInterval(() => { if (!document.hidden && !car.matches(":hover, :focus-within")) montre(k + 1); }, 6000); };
   car.querySelector(".prec").addEventListener("click", () => { montre(k - 1); lance(); });
   car.querySelector(".suiv").addEventListener("click", () => { montre(k + 1); lance(); });
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { charge(1); o.disconnect(); } }, { rootMargin: "300px" }).observe(car);
   lance();
 } else $("#vitrine").innerHTML = V.imgs.map((m, i) =>
   `<figure class="a${i + 1}"><div class="cadre"${V.archive ? "" : ' style="background:var(--argile-f)"'}><img decoding="async" src="${C.img + m.src}" alt="${m.alt}" loading="lazy"${V.archive ? "" : ' style="transform:none"'}></div><figcaption>${m.legende}</figcaption></figure>`).join("");
