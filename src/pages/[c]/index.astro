@@ -1,0 +1,91 @@
+---
+import Base from "../../layouts/Base.astro";
+import Photo from "../../components/Photo.astro";
+import Carte from "../../components/Carte.astro";
+import { COMMUNES, commune, de, lien } from "../../lib/communes.js";
+import { photo } from "../../lib/images.js";
+import { SYM } from "../../data/symboles.js";
+export const getStaticPaths = () => COMMUNES.map((x) => ({ params: { c: x.id } }));
+const C = commune(Astro.params.c);
+const H = C.hero;
+const hd = await photo(C.id, H.img), hm = H.mobile ? await photo(C.id, H.mobile) : hd;
+// diaporama : la photo d'accueil, puis le plein écran et la vitrine
+const diapos = [H.img, C.plein && C.plein.img, ...(C.vitrine ? C.vitrine.imgs.map((m) => m.src) : [])].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).slice(1, 4);
+const [s1, s2] = C.symboles || ["trone", "poisson"];
+const entrees = [
+  [lien(C.id, "demarches"), "Démarches", "Naissance, résidence, permis, taxes", SYM[s1]("currentColor", "var(--argile)")],
+  [lien(C.id, "decouvrir"), "Découvrir", C.accroche, SYM[s2]("currentColor", "var(--argile)")],
+  ["#mairie", "La mairie", `Horaires, contacts, ${C.arrondissements.length} arrondissements`, SYM.palmier("currentColor")],
+];
+const V = C.vitrine;
+const vues = [...V.imgs.map((m) => ({ src: m.src, alt: m.alt, leg: m.legende })),
+  ...C.decouvrir.flatMap((c) => [c.grande, c.petite].filter(Boolean).map((m) => ({ src: m.src, alt: m.alt, leg: `${c.titre}. ${m.credit}` })))]
+  .filter((v, i, a) => a.findIndex((w) => w.src === v.src) === i).slice(0, 12);
+const trios = []; for (let i = 0; i + 3 <= vues.length; i += 3) trios.push(vues.slice(i, i + 3));
+const taille = (i) => (i === 0 ? "(max-width:819px) 100vw, 50vw" : "(max-width:819px) 50vw, 25vw");
+const P = C.plein;
+---
+<Base C={C} page="index" carte titre={C.titre || C.nom} description={`Site de la commune ${de(C.nom)}${C.nom} (${C.departement}, Bénin) : démarches, patrimoine, mairie.`}>
+  <Fragment slot="tete">
+    <link rel="preload" as="image" imagesrcset={hm.srcset} imagesizes="100vw" media="(max-width:819px)" fetchpriority="high">
+    <link rel="preload" as="image" imagesrcset={hd.srcset} imagesizes="100vw" media="(min-width:820px)" fetchpriority="high">
+  </Fragment>
+  <main id="contenu">
+    <section class="hero" aria-labelledby="nom">
+      <img id="heroImg" alt={H.alt} fetchpriority="high" decoding="async" width={hd.width} height={hd.height}
+        data-dsrc={hd.src} data-dsrcset={hd.srcset} data-msrc={hm.src} data-msrcset={hm.srcset} sizes="100vw"
+        style={H.position ? `object-position:${H.position}` : undefined}>
+      <script is:inline>(() => { const i = document.getElementById("heroImg"), m = matchMedia("(max-width:819px)").matches; i.srcset = m ? i.dataset.msrcset : i.dataset.dsrcset; i.src = m ? i.dataset.msrc : i.dataset.dsrc; })();</script>
+      {diapos.map((src) => <Photo c={C.id} src={src} differe class="diapo" aria-hidden="true" loading="eager" />)}
+      <h1 class="nom" id="nom" aria-label={C.nom} style={`--n:${C.nom.length}`}>{[...C.nom].map((l, i) => <span style={`--i:${i}`} aria-hidden="true">{l}</span>)}</h1>
+      <p id="phrase">{C.phrase}</p>
+      <span class="credit">{H.credit}</span>
+    </section>
+
+    <nav class="argile entrees" aria-label="Accès rapides">
+      {entrees.map(([h, t, d, s]) => <a href={h}><span class="relief" set:html={s} /><span><b class="relief-t">{t}</b><small>{d}</small></span></a>)}
+    </nav>
+
+    <section class="sec" id="decouvrir" aria-labelledby="tvit">
+      <h2 id="tvit">{V.titre}</h2>
+      <p class="chapo">{V.texte}</p>
+      {V.archive
+        ? <div class="archives">{V.imgs.map((m, i) => <figure class={`a${i + 1}`}><div class="cadre"><Photo c={C.id} src={m.src} alt={m.alt} sizes={taille(i)} /></div><figcaption>{m.legende}</figcaption></figure>)}</div>
+        : <div class="carrousel" role="region" aria-roledescription="carrousel" aria-label={`Images de ${C.nom}`}>
+            <div class="vues">{trios.map((t, k) => (
+              <div class={k ? "trio" : "trio on"} role="group" aria-label={`${k + 1} sur ${trios.length}`} aria-hidden={k ? "true" : undefined}>
+                {t.map((v, i) => <figure class={`a${i + 1}`}><div class="cadre"><Photo c={C.id} src={v.src} alt={v.alt} sizes={taille(i)} differe={k > 0} /></div><figcaption>{v.leg}</figcaption></figure>)}
+              </div>))}</div>
+            <div class="fleches"><span class="compte"><b>01</b> / {String(trios.length).padStart(2, "0")}</span>
+              <button type="button" class="prec" aria-label="Images précédentes"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button type="button" class="suiv" aria-label="Images suivantes"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>}
+      <a class="lien" href={lien(C.id, "decouvrir")} style="margin-top:72px">{V.lien}</a>
+    </section>
+
+    {C.rois && <section class="argile frise" aria-labelledby="trois">
+      <header><h2 class="relief-t" id="trois" style="font:900 clamp(2.6rem,7vw,6rem)/.9 var(--titre);text-transform:uppercase">{C.frise.titre}</h2>
+      <p class="chapo" style="max-width:46ch;margin-top:16px;color:#f6dccb">{C.frise.texte}</p></header>
+      <div class="rois" tabindex="0" aria-label="Frise des rois, défilement horizontal" data-lenis-prevent>
+        {C.rois.map((r) => <article class="roi"><div class="medaillon"><Photo c={C.id} src={r.img} alt={`Médaillon du roi ${r.nom}`} sizes="240px" /></div><b class="relief-t">{r.nom}</b><span class="regne">{r.regne}</span><p>{r.d}</p></article>)}
+      </div>
+      <p class="glisser">Faites glisser pour voir les autres rois.</p>
+      <p class="source">{C.roisCredit}</p>
+    </section>}
+
+    <section class="plein" aria-labelledby="vivant">
+      <Photo c={C.id} src={P.img} alt={P.alt} sizes="100vw" />
+      <h2 id="vivant">{P.titre}</h2>
+      <p>{P.texte}</p>
+      <a class="lien" href="#mairie">Préparer ma visite</a>
+      <p class="credit">{P.credit}</p>
+    </section>
+
+    <section class="sec" id="mairie" aria-labelledby="tvenir">
+      <h2 id="tvenir">Venir à {C.nom}</h2>
+      <p class="chapo">{C.acces} Choisissez un lieu, la carte vous y emmène.</p>
+      <Carte C={C} />
+    </section>
+  </main>
+</Base>

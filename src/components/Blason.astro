@@ -1,0 +1,5 @@
+---
+import { de } from "../lib/communes.js";
+const { C, style } = Astro.props;
+---
+<span class={C.blason ? "blason" : "blason mono"} role="img" aria-label={`Blason de la commune ${de(C.nom)}${C.nom}`} style={style}>{C.blason ? "" : C.nom[0]}</span>

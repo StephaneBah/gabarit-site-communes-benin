@@ -1,0 +1,72 @@
+---
+import Base from "../../layouts/Base.astro";
+import "../../styles/demarches.css";
+import { COMMUNES, commune, de } from "../../lib/communes.js";
+import { CATEGORIES, SITUATIONS, DEMARCHES } from "../../data/demarches.js";
+import { SYM } from "../../data/symboles.js";
+export const getStaticPaths = () => COMMUNES.map((x) => ({ params: { c: x.id } }));
+const C = commune(Astro.params.c);
+const D = DEMARCHES.map((d) => ({ ...d, t: d.t.replace("{marche}", C.marche), ou: d.ou.replace("{marche}", C.marche) }));
+const VAR = { civil: "--t1", attest: "--t4", foncier: "--t2", taxes: "--t3" };
+const rang = (d) => `<li class="rang" style="--c:var(${VAR[d.cat]})"><button data-id="${d.id}"><b>${d.t}</b><span class="meta">${d.court}</span></button></li>`;
+const tickets = D.filter((d) => d.top).sort((a, b) => a.top - b.top);
+const donnees = { id: C.id, D, CATEGORIES, SITUATIONS };
+const fleche = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>`;
+---
+<Base C={C} page="demarches" theme="coton" titre={`Démarches, mairie ${de(C.nom)}${C.nom}`} description={`Les démarches de la mairie ${de(C.nom)}${C.nom} : pièces à apporter, coût, délai.`}>
+  <main id="contenu" class="wrap">
+    <section class="veux">
+      <form role="search" onsubmit="return false">
+        <div class="ligne"><label for="q">Je veux</label>
+        <div class="champ"><input id="q" type="search" autocomplete="off" placeholder=" " aria-describedby="aide"><button type="button" class="suggestion" id="sugg" aria-live="polite"></button>
+          <button type="button" class="derouler" id="derouler" aria-expanded="false" aria-controls="menu" aria-label="Voir toutes les démarches" set:html={fleche}></button>
+        </div></div>
+        <ul class="menu" id="menu" hidden set:html={D.map(rang).join("")}></ul>
+      </form>
+      <p id="aide">{D.length} démarches de la mairie {de(C.nom)}{C.nom}, expliquées pièce par pièce. Touchez la proposition pour l'ouvrir, écrivez votre demande, ou déroulez la liste.</p>
+      <ul class="resultats" id="resultats" aria-live="polite"></ul>
+    </section>
+
+    <section class="bloc" aria-labelledby="tsit">
+      <h2 id="tsit">Selon votre situation</h2>
+      <div class="situations" id="situations">
+        {SITUATIONS.map((s, i) => <button class="sit" style={`--i:${i}`} data-sit={s.id} aria-expanded="false" aria-controls={`sous-${s.id}`}><Fragment set:html={SYM[s.sym]("currentColor", `var(${["--t1", "--t4", "--t2", "--t3"][i]})`)} /><span><b>{s.titre}</b><small>{s.d}</small></span></button>)}
+      </div>
+    </section>
+
+    <section class="bloc" aria-labelledby="ttick">
+      <h2 id="ttick">Le plus souvent au guichet</h2>
+      <div class="tickets" id="tickets">
+        {tickets.map((d, i) => <button class="ticket" data-id={d.id} style={`--c:var(${VAR[d.cat]})`}><span class="num">N° {String(i + 1).padStart(3, "0")}</span><span class="delai">{d.court}</span><b>{d.t}</b><span class="cout">{d.cout}</span></button>)}
+      </div>
+    </section>
+
+    <section class="bloc" aria-labelledby="ttout">
+      <h2 id="ttout">Toutes les démarches</h2>
+      <div class="groupes" id="groupes">
+        {Object.entries(CATEGORIES).map(([k, c]) => <div class="groupe" style={`--c:var(${VAR[k]})`}><h3><Fragment set:html={SYM[c.sym]("currentColor", `var(${VAR[k]})`)} />{c.nom}</h3><ul set:html={D.filter((d) => d.cat === k).map(rang).join("")}></ul></div>)}
+      </div>
+    </section>
+    <p class="note">Pièces, coûts et délais donnés à titre d'exemple, à valider par les services de la mairie. Procédures nationales : service-public.bj.</p>
+  </main>
+
+  <dialog class="fiche" id="fiche" aria-labelledby="ficheT">
+    <div class="bandeau" id="ficheB"></div>
+    <div class="corps">
+      <form method="dialog"><button class="fermer" aria-label="Fermer">&#x2715;</button></form>
+      <span class="cat" id="ficheC"></span>
+      <h3 id="ficheT"></h3>
+      <dl id="ficheD"></dl>
+      <h4>Pièces à apporter</h4>
+      <ul id="ficheP"></ul>
+      <p class="prog" id="ficheR"></p>
+      <p class="ou" id="ficheO"></p>
+    </div>
+  </dialog>
+  <Fragment slot="scripts">
+    <script type="application/json" id="donnees-dem" set:html={JSON.stringify(donnees)}></script>
+    <script>
+      import "../../scripts/demarches.js";
+    </script>
+  </Fragment>
+</Base>

@@ -1,0 +1,45 @@
+---
+import Base from "../../layouts/Base.astro";
+import Photo from "../../components/Photo.astro";
+import Carte from "../../components/Carte.astro";
+import { COMMUNES, commune } from "../../lib/communes.js";
+export const getStaticPaths = () => COMMUNES.map((x) => ({ params: { c: x.id } }));
+const C = commune(Astro.params.c);
+const archive = (m) => m.archive || m.src.startsWith("1930");
+---
+<Base C={C} page="decouvrir" carte titre={`Découvrir ${C.nom}`} description={`${C.nom} en images : ses lieux, son histoire.`}
+  credits="Photos créditées sous chaque image (Wikimedia Commons ; images de maquette, droits à obtenir). Carte © OpenStreetMap. Maquette de démonstration.">
+  <main id="contenu">
+    <header class="recit-tete">
+      <h1>Découvrir</h1>
+      <p>{C.chapoDecouvrir}</p>
+    </header>
+    <div id="recit">
+      {C.decouvrir.map((c, i) => (
+        <article class={i % 2 ? "chap inv" : "chap"} aria-labelledby={`c${i}`}>
+          <figure class="g"><Photo c={C.id} src={c.grande.src} alt={c.grande.alt} sizes="(max-width:899px) 100vw, 62vw" loading={i ? "lazy" : "eager"} fetchpriority={i ? undefined : "high"} /><figcaption class="cr">{c.grande.credit}</figcaption></figure>
+          <figure class={["p", c.petite.portrait && "portrait", archive(c.petite) && "archive"].filter(Boolean).join(" ")}><Photo c={C.id} src={c.petite.src} alt={c.petite.alt} sizes="(max-width:899px) 60vw, 30vw" /></figure>
+          <div class="t">
+            <span class="n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <h2 id={`c${i}`}>{c.titre}</h2>
+            <p>{c.texte}</p>
+            {c.lieu && <button class="voir" data-lieu={c.lieu}>Voir sur la carte</button>}
+            <p class="cr">Image superposée : {c.petite.credit}</p>
+          </div>
+        </article>))}
+    </div>
+    <section class="sec" id="plan" aria-labelledby="tplan">
+      <h2 id="tplan">Sur la carte</h2>
+      <p class="chapo">Les lieux du récit, et la mairie pour vos démarches.</p>
+      <Carte C={C} />
+    </section>
+  </main>
+  <Fragment slot="scripts"><script>
+    const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById("recit").addEventListener("click", (e) => {
+      const b = e.target.closest(".voir"); if (!b) return;
+      document.getElementById("plan").scrollIntoView({ behavior: reduit ? "auto" : "smooth" });
+      setTimeout(() => window.choisirLieu && window.choisirLieu(b.dataset.lieu), reduit ? 300 : 900);
+    });
+  </script></Fragment>
+</Base>

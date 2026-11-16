@@ -1,0 +1,9 @@
+---
+// Une photo de commune, déclinée en plusieurs tailles. differe : l'adresse n'est posée qu'au besoin (data-src), par le script.
+import { photo } from "../lib/images.js";
+const { c, src, alt = "", sizes = "100vw", loading = "lazy", differe = false, ...reste } = Astro.props;
+const p = await photo(c, src);
+---
+{differe
+  ? <img data-src={p.src} data-srcset={p.srcset} sizes={sizes} alt={alt} width={p.width} height={p.height} loading={loading} decoding="async" {...reste} />
+  : <img src={p.src} srcset={p.srcset} sizes={sizes} alt={alt} width={p.width} height={p.height} loading={loading} decoding="async" {...reste} />}

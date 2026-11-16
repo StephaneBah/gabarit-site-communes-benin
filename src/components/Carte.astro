@@ -1,0 +1,15 @@
+---
+const { C } = Astro.props;
+const donnees = { nom: C.nom, carte: C.carte, lieux: C.lieux };
+---
+<div class="carte" id="carte">
+  <ol class="lieux" data-lenis-prevent>
+    {C.lieux.map((l, i) => <li><button data-i={i} style={`--c:${l.couleur}`}><i>{l.mairie ? "M" : i + 1}</i><span><b>{l.nom}</b><small>{l.d}</small></span></button></li>)}
+  </ol>
+  <div class="map" role="region" aria-label={`Carte de ${C.nom}`}></div>
+</div>
+<script type="application/json" id="donnees-carte" set:html={JSON.stringify(donnees)}></script>
+<script>
+  import { carte } from "../scripts/carte.js";
+  carte(document.getElementById("carte"));
+</script>

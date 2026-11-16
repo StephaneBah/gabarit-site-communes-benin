@@ -1,0 +1,92 @@
+---
+// Squelette commun à toutes les pages d'une commune : identité, en-tête, menu, pied, onglets mobiles.
+import "../styles/site.css";
+import Blason from "../components/Blason.astro";
+import Photo from "../components/Photo.astro";
+import { COMMUNES, de, voyelle, lien, logo } from "../lib/communes.js";
+import { SYM } from "../data/symboles.js";
+const { C, page, titre, description, carte = false, theme, credits } = Astro.props;
+const vars = { ...(C.couleurs || {}) };
+if (C.blason) Object.assign(vars, { "blason-src": `url("${logo(C.blason.src)}")`, "blason-taille": C.blason.taille || "contain", "blason-pos": C.blason.position || "center", "blason-ratio": C.blason.ratio || "1" });
+const style = Object.entries(vars).map(([k, v]) => `--${k}:${v}`).join(";");
+const argile = (C.couleurs && C.couleurs.argile) || "#8f3f22";
+const favicon = "data:image/svg+xml," + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='${argile}'/><text x='50' y='74' font-size='70' text-anchor='middle' fill='#f4e9dc' font-family='Impact'>${C.nom[0]}</text></svg>`);
+const nav = [["demarches", "Démarches"], ["decouvrir", "Découvrir"]];
+const volet = [
+  [lien(C.id), "Accueil", "Le portail de la commune", page === "index"],
+  [lien(C.id, "demarches"), "Démarches", "Actes, certificats, autorisations", page === "demarches"],
+  [lien(C.id, "decouvrir"), "Découvrir", C.accroche || "Histoire et lieux", page === "decouvrir"],
+  [lien(C.id, "index", "#mairie"), "La mairie", "Adresse, carte, accès", false],
+];
+const onglets = [
+  [lien(C.id), "Accueil", SYM.case("currentColor", "#151210"), page === "index"],
+  [lien(C.id, "demarches"), "Démarches", SYM.trone("currentColor", "#151210"), page === "demarches"],
+  [lien(C.id, "decouvrir"), "Découvrir", SYM.poisson("currentColor", "#151210"), page === "decouvrir"],
+  [lien(C.id, "index", "#mairie"), "La mairie", SYM.palmier("currentColor"), false],
+];
+const fond = C.hero.mobile || C.hero.img;
+---
+<!doctype html>
+<html lang="fr" class={C.blason ? undefined : "sans-blason"} style={style} data-theme={theme}>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{titre}</title>
+<meta name="description" content={description}>
+<meta name="theme-color" content={theme ? "#f3ece0" : "#1e0f09"}>
+<link rel="icon" href={favicon}>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+{carte && <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">}
+<slot name="tete" />
+{page === "index" && <script is:inline define:vars={{ id: C.id }}>
+  // ouverture « blason » : une fois par visite, sur l'accueil seulement
+  try { if (!sessionStorage.getItem("vu-" + id) && !matchMedia("(prefers-reduced-motion: reduce)").matches) { document.documentElement.classList.add("intro"); sessionStorage.setItem("vu-" + id, "1"); } } catch (e) {}
+</script>}
+</head>
+<body class={theme ? "dem avec-maquette" : "avec-maquette"}>
+<div class="jauge" aria-hidden="true"></div>
+<p class="maquette">Maquette de concours, site non officiel : ce n'est pas le site de la mairie {de(C.nom)}{C.nom}.</p>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <a class="brand" href={lien(C.id)}><Blason C={C} /><span><b class="nomC">{C.nom}</b><small>Mairie</small></span></a>
+  <nav aria-label="Navigation principale">
+    {nav.map(([p, t]) => <a href={lien(C.id, p)} aria-current={page === p ? "page" : undefined}>{t}</a>)}
+    <a href={lien(C.id, "index", "#mairie")}>La mairie</a>
+  </nav>
+  <button class="burger" aria-expanded="false" aria-controls="volet"><span>Menu</span><i aria-hidden="true"></i></button>
+</header>
+
+<slot />
+
+<footer class="pied">
+  <Blason C={C} style="width:72px" />
+  <div><p class="devise">{C.devise}</p><p>Commune {de(C.nom)}{C.nom}, département {voyelle(C.departement) ? "de l'" : "du "}{C.departement}, République du Bénin.</p></div>
+  <p class="credits">{credits || `${C.creditsPied} Carte © OpenStreetMap. Maquette de démonstration.`}</p>
+  <nav class="autres" aria-label="Le même site pour d'autres communes"><span>Même gabarit</span>
+    {COMMUNES.map((x) => <a href={lien(x.id, page)} aria-current={x.id === C.id ? "page" : undefined}>{x.nom}</a>)}
+  </nav>
+  <p class="pays"><i aria-hidden="true"></i>République du Bénin · <b>Un monde de splendeurs</b></p>
+</footer>
+
+<div class="volet" id="volet" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <Photo c={C.id} src={fond} sizes="100vw" aria-hidden="true" />
+  <div class="volet-in">
+    <p class="volet-t">{C.nom}<small>Mairie · {C.departement}</small></p>
+    <nav>{volet.map(([h, t, s, actif], i) => <a href={h} style={`--i:${i}`} aria-current={actif ? "page" : undefined}><b>{t}</b><small>{s}</small></a>)}</nav>
+    <p class="volet-c">Autres communes : {COMMUNES.filter((x) => x.id !== C.id).map((x) => <><a href={lien(x.id, page)}>{x.nom}</a> </>)}</p>
+  </div>
+  <button class="fermer" aria-label="Fermer le menu">Fermer</button>
+</div>
+
+<nav class="tabs" aria-label="Navigation principale">
+  {onglets.map(([h, l, s, actif]) => <a href={h} aria-current={actif ? "page" : undefined}><Fragment set:html={s} /><span>{l}</span></a>)}
+</nav>
+
+<script>
+  import "../scripts/vivant.js";
+</script>
+<slot name="scripts" />
+</body>
+</html>
