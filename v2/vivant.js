@@ -53,7 +53,7 @@ function vivant(C) {
   }
   // fin de l'ouverture : on rend la main
   if (document.documentElement.classList.contains("intro")) setTimeout(() => document.documentElement.classList.remove("intro"), 3400);
-  if (calme) return;
+  // mouvement réduit (réglage du système) : on garde les fondus, sans zoom ni déplacement
 
   // 2. accueil : diaporama en fondu sur le héros
   const hero = document.getElementById("heroImg");
@@ -82,7 +82,7 @@ function vivant(C) {
   }
 
   // A. défilement fluide (souris et pavé tactile ; le téléphone garde son défilement natif)
-  if (matchMedia("(pointer:fine)").matches) {
+  if (!calme && matchMedia("(pointer:fine)").matches) {
     document.querySelectorAll(".volet, .rois, .map, .lieux").forEach((el) => el.setAttribute("data-lenis-prevent", ""));
     const sc = document.createElement("script");
     sc.src = "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js";

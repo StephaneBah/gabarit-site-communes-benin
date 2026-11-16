@@ -11,8 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Black&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="site.css?v=26">
-<script src="charge.js?v=26"></script>
+<link rel="stylesheet" href="site.css?v=27">
+<script src="charge.js?v=27"></script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -42,9 +42,9 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="commun.js?v=26"></script>
-<script src="vivant.js?v=26"></script>
-<script src="symboles.js?v=26"></script>
+<script src="commun.js?v=27"></script>
+<script src="vivant.js?v=27"></script>
+<script src="symboles.js?v=27"></script>
 <script>
 const C = COMMUNE, $ = (s) => document.querySelector(s);
 document.title = `Découvrir ${C.nom}`;
@@ -56,8 +56,8 @@ $("#lieuC").textContent = `Commune ${DE}${C.nom}, département ${/^[AEIOUÉÈ]/i
 const archive = (m) => m.archive || m.src.startsWith("1930");
 $("#recit").innerHTML = C.decouvrir.map((c, i) => `
   <article class="chap${i % 2 ? " inv" : ""}" aria-labelledby="c${i}">
-    <figure class="g"><img src="${C.img + c.grande.src}" alt="${c.grande.alt}" loading="${i ? "lazy" : "eager"}"><figcaption class="cr">${c.grande.credit}</figcaption></figure>
-    <figure class="p${c.petite.portrait ? " portrait" : ""}${archive(c.petite) ? " archive" : ""}"><img src="${C.img + c.petite.src}" alt="${c.petite.alt}" loading="lazy"></figure>
+    <figure class="g"><img decoding="async" src="${C.img + c.grande.src}" alt="${c.grande.alt}" loading="${i ? "lazy" : "eager"}"><figcaption class="cr">${c.grande.credit}</figcaption></figure>
+    <figure class="p${c.petite.portrait ? " portrait" : ""}${archive(c.petite) ? " archive" : ""}"><img decoding="async" src="${C.img + c.petite.src}" alt="${c.petite.alt}" loading="lazy"></figure>
     <div class="t">
       <span class="n" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
       <h2 id="c${i}">${c.titre}</h2>
